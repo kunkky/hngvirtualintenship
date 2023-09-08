@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     return res.status(200).send({
         responseCode: "00",
-        responseMessage: "You are connected Ecommerce app api",
+        responseMessage: "You are connected to my app api",
         data: 'you are connected',
     });
 });
@@ -16,10 +16,12 @@ router.get("/getUser", (req, res) => {
     const { param1, param2 } = req.query;
 
     //get current day of the week
+    const currentDate = new Date();
+    const currentDayOfWeek = currentDate.getDay();
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const currentDayName = daysOfWeek[currentDayOfWeek];
     //utc time
-    const currentDate = new Date();
+
 
     const year = currentDate.getFullYear();         // Get the current year (e.g., 2023)
     const month = currentDate.getMonth() + 1;       // Get the current month (0-based index, so add 1)
@@ -38,23 +40,15 @@ router.get("/getUser", (req, res) => {
         "current_day": currentDayName,
         "utc_time": fullDateTime,
         "track": "backend",
-        "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
-        "github_repo_url": "https://github.com/username/repo",
-        "status_code": 200
+        "github_file_url": "https://github.com/kunkky/hngvirtualintenship/tree/main/firsttask",
+        "github_repo_url": "https://github.com/kunkky/hngvirtualintenship",
     }
 
     return res.status(200).send({
         responseCode: "00",
-        responseMessage: "You are connected Ecommerce app api",
-        data: {
-            "slack_name": "example_name",
-            "current_day": "Monday",
-            "utc_time": "2023-08-21T15:04:05Z",
-            "track": "backend",
-            "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
-            "github_repo_url": "https://github.com/username/repo",
-            "status_code": 200
-        }
+        status:"200",
+        responseMessage: "You are connected app api",
+        data
 
     });
 });
