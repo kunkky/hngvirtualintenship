@@ -1,0 +1,73 @@
+*{
+padding: 0px;
+margin: 0px;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100vw;
+height: 100vh;
+background-color: rgb(8, 3, 56);
+}
+main{
+width: 500px;
+height: auto;
+padding: 20px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: white;
+}
+img{
+border-radius: 50%;
+width: 200px;
+aspect-ratio: 1/1;
+}
+.slackimg{
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.username{
+text-transform: capitalize;
+text-align: center;
+color: rgb(1, 1, 36);
+}
+.track, .git{
+text-align: center;
+color: rgb(155, 0, 0);
+}
+#date{
+font-size: x-large;
+font-weight: bolder;
+text-transform: uppercase;
+text-align: center;
+}
+a{
+text-decoration: none;
+color: aliceblue;
+font-size: smaller;
+cursor: pointer;
+background-color: rgb(1, 1, 65);
+border-radius: 4px;
+padding: 5px;
+margin: 5px;
+}
+a:hover{
+color: rgb(8, 8, 122);
+}
+.git{
+padding: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 50px;
+    }
+}
