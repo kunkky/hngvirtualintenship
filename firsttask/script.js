@@ -12,14 +12,18 @@ dateDiv.innerHTML=currentDayName;
 //set date data-test-id
 document.getElementById("date").setAttribute('data-testid', currentDayName);
 
-//curent time UTC in milliseconds
-const currentUTCTimeMilliseconds = new Date().getTime();
 
 
-//display the time using a setInterval
-function updateCounter() {
-  const currentUTCTimeMilliseconds = new Date().getTime();
-  document.getElementById('time').textContent = currentUTCTimeMilliseconds;
-}
+//date
+const year = currentDate.getFullYear();         // Get the current year (e.g., 2023)
+const month = currentDate.getMonth() + 1;       // Get the current month (0-based index, so add 1)
+const day = currentDate.getDate();               // Get the day of the month (1-31)
+const hours = currentDate.getHours();            // Get the current hour (0-23)
+const minutes = currentDate.getMinutes();        // Get the current minute (0-59)
+const seconds = currentDate.getSeconds();        // Get the current second (0-59)
+const milliseconds = currentDate.getMilliseconds();  // Get the current millisecond (0-999)
 
-setInterval(updateCounter, 10);
+// Create a formatted date and time string
+const fullDateTime = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(milliseconds).padStart(3, '0')}`;
+
+document.getElementById('time').textContent = fullDateTime;
