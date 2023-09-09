@@ -43,7 +43,7 @@ router.get("/getUser", (req, res) => {
         "current_day": currentDayName,
         "utc_time": fullDateTime,
         "track": "backend",
-        "github_file_url": "https://github.com/kunkky/hngvirtualintenship/tree/main/firsttask",
+        "github_file_url": "https://github.com/kunkky/hngvirtualintenship/tree/main/backendTasks/firsttask",
         "github_repo_url": "https://github.com/kunkky/hngvirtualintenship",
     }
 
