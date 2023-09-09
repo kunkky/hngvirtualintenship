@@ -14,7 +14,10 @@ router.get("/", (req, res) => {
 //default Get
 router.get("/getUser", (req, res) => {
     const { param1, param2 } = req.query;
-
+    let parameters=null;
+     if (param1 || param2) {
+         parameters= `You sent param1=${param1} and param2=${param2}.`;
+    }
     //get current day of the week
     const currentDate = new Date();
     const currentDayOfWeek = currentDate.getDay();
@@ -47,9 +50,9 @@ router.get("/getUser", (req, res) => {
     return res.status(200).send({
         responseCode: "00",
         status:"200",
-        responseMessage: "You are connected app api",
-        data
-
+        responseMessage: "Data Fetched successfully",
+        data,
+        parameters
     });
 });
 
